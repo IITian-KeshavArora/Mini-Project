@@ -151,3 +151,16 @@
     opacity:1;
     transition: 0.3s ease ;
 }
+
+@media (min-width:0px) and (max-width:600px)
+{
+    body(flex-wrap:wrap;)
+}
+
+
+
+
+
+
+
+
