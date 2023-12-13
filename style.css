@@ -1,0 +1,153 @@
+*
+{
+    margin:0px;
+    padding:0px;
+    font-family: "Poppins",sans-serif;
+}
+
+.main_box
+{
+    background-image: url(photo.jpg);
+    /* as I can see, divisions are only taking up the height to which they can take.
+       so as to increase the height to division to the full length of the page, I've to do height:100vh; vh-viewport */
+    height: 100vh;
+    /* here 1vh means 1% of the viewport's height. so as we did 100vh. :) */
+    background-size: cover;
+}
+
+.btn_one
+{
+    color:white;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.sidebar_menu
+{
+    position: fixed;
+    left: -300px; /* Bs yeh karne se menu ban jayega, our sidebar menu is on the left of the screen, outside of it. */
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease 0.1s;
+}
+
+.sidebar_menu .logo /*according to selectors, it means voh logo jo sidebar_menu class ke under hai.*/
+{
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    height: 60px;
+}
+
+.sidebar_menu .logo a
+{
+    position: absolute;
+    left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar_menu .btn_two i
+{
+    color: grey;
+    position: absolute;
+    left: 275px;
+    font-size: 24px;
+    opacity: 0;
+    line-height: 60px;
+    cursor:pointer;
+}
+
+.sidebar_menu .menu 
+{
+    position: absolute;
+    width: 100%;
+    top: 80px;
+}
+
+.sidebar_menu .menu li
+{
+    margin-top: 6px;
+    padding: 14px 20px;
+}
+
+
+.sidebar_menu .menu i,a
+{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar_menu .menu i
+{
+    padding-right: 10px;
+}
+
+.sidebar_menu .social_media
+{
+    position: absolute;
+    left: 25%;
+    bottom:50px;
+}
+
+.sidebar_menu .social_media i
+{
+    color: white;
+    opacity: 0.5;
+    padding-right:6px;
+}
+
+#check
+{
+    display:none; /*We've done this to remove the checkbox icon, because we still don't know JS, so we will perform
+                    this sidebar opening using checkboxes by html & css only.*/
+}
+
+.sidebar_menu .menu li:hover
+{
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.btn_one:hover
+{
+    font-size: 32px;
+}
+
+.btn_two i:hover
+{
+    font-size: 30px;
+}
+
+.sidebar_menu .social_media i:hover
+{
+    opacity:1;
+    transform: scale(1.1)
+}
+
+#check:checked ~ .sidebar_menu 
+{
+    left: 0px;
+}
+
+#check:checked ~ .btn_one i
+{
+    opacity:0;
+    transition: 0.3s ease ;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i
+{
+    opacity:1;
+    transition: 0.3s ease ;
+}
